@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'android-aspectjx'
+
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.beilvla'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.my.base"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    /*RxJava与RxAndroid的依赖*/
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    /*Retrofit与RxAndroid配置依赖*/
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    /*使Retrofit的转化器自定义完成数据的转化
+    * 就是我们可以接口中少写一些bean类
+    * */
+    implementation 'com.squareup.retrofit2:converter-scalars:+'
+
+    /*gson解析*/
+    implementation 'com.google.code.gson:gson:2.8.6'
+    //屏幕适配
+    implementation 'me.jessyan:autosize:1.1.2'
+}
