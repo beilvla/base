@@ -1,2 +1,2 @@
-# continuousclick
-java和kotlin防止二次点击（自用）
+# myBase
+创建项目基本代码  UI  网络请求
