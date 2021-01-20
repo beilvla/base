@@ -1,6 +1,6 @@
 package com.my.base.ui;
 
-/**
+
 public class StatusBarUtil {
     public static final int DEFAULT_STATUS_BAR_ALPHA = 112;
     private static final int FAKE_STATUS_BAR_VIEW_ID = R.id.statusbarutil_fake_status_bar_view;
